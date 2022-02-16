@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import styles from "./Landing.module.css"
 import Loader from './Loader';
+import Coin from './Coin';
 //api
 import { getCoin } from '../service/api';
 
@@ -25,9 +26,7 @@ const Landing = () => {
       <>
         <input placeholder="Search" type="text" onChange={changeHandler}/>
         <div className={styles.container}>
-          {data.length ? data.map((item) => (
-            <p key={item.id}>{item.name}</p>
-          )): <Loader/>}
+                {data.length ? data.map((item) => <Coin key={item.id} coinData={item}/>): <Loader/>}
         </div>
       </>
     );
