@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import styles from "./Landing.module.css"
 import Loader from './Loader';
 import Coin from './Coin';
+import TitleBar from './TitleBar';
 //api
 import { getCoin } from '../service/api';
 
@@ -12,6 +13,7 @@ const Landing = () => {
     const changeHandler = (event) => {
         setChange(event.target.value);
     }
+    const searchCoins = data.filter((coin) => coin.name.toLowerCase().includes(change.toLowerCase()))
     
     useEffect(() => {
         const fetchApi = async() => {
@@ -24,9 +26,14 @@ const Landing = () => {
 
     return (
       <>
-        <input placeholder="Search" type="text" onChange={changeHandler}/>
+        <input placeholder="Search" type="text" onChange={changeHandler} />
+        <TitleBar />
         <div className={styles.container}>
-                {data.length ? data.map((item) => <Coin key={item.id} coinData={item}/>): <Loader/>}
+          {data.length ? (
+            searchCoins.map((item) => <Coin key={item.id} coinData={item} />)
+          ) : (
+            <Loader />
+          )}
         </div>
       </>
     );
