@@ -1,3 +1,6 @@
+*{
+    background-color:#343a40 ;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -5,4 +8,15 @@
     align-items: center;
     text-transform: capitalize;
     font-weight: bold;
+}
+
+.search{
+    position: relative;
+    width: 200px;
+    left: 42rem;
+    padding: 5px;
+    margin: 20px 0 20px 0;
+    border-color: #ced4da;
+    color: #ced4da;
+    border: 2px solid #ced4da;
 }

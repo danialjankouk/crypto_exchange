@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    border: 2px solid #ced4da;
+    border-radius: 7px;
+    width: 50%;
+    color: #ced4da;
+    padding: 5px 50px 0 20px;
+    margin: 30px;
+    justify-content: space-between;
+}
+.rank{
+    padding: 10px;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+    padding: 20px;
+}
+.container span{
+    display: flex;
+    padding: 25px;
+}
