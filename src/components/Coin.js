@@ -5,7 +5,11 @@ const Coin = ({ coinData }) => {
     <>
       <div className={styles.container}>
         <span className={styles.rank}>{coinData.market_cap_rank}</span>
-        <img src={coinData.image} alt="coinImage"className={styles.logo} />
+        <img
+          src={coinData.image}
+          alt="coinImage"
+          className={`${styles.logo} md:flex md:mt-[1rem] mt-[2rem] mr-[4rem] ml-[1rem] mb-[2rem]`}
+        />
         <span>{coinData.name}</span>
         <span>{coinData.symbol.toUpperCase()}</span>
         <span>{coinData.current_price.toLocaleString()}</span>
